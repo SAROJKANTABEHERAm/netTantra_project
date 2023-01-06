@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/netTantra_project/static/css/main.756af292.css",
+    "main.js": "/netTantra_project/static/js/main.a3ba0b47.js",
+    "static/js/787.9be1cb8f.chunk.js": "/netTantra_project/static/js/787.9be1cb8f.chunk.js",
+    "index.html": "/netTantra_project/index.html",
+    "main.756af292.css.map": "/netTantra_project/static/css/main.756af292.css.map",
+    "main.a3ba0b47.js.map": "/netTantra_project/static/js/main.a3ba0b47.js.map",
+    "787.9be1cb8f.chunk.js.map": "/netTantra_project/static/js/787.9be1cb8f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.756af292.css",
+    "static/js/main.a3ba0b47.js"
+  ]
+}
