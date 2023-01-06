@@ -1,25 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
+import React,{useState} from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar';
+import Dashboard from './Components/Dashboard/Dashboard';
+import NewRequest from './Components/NewRequest/NewRequest';
+import Login from './Components/Login/Login';
+import Register from './Components/Register/Register';
+import Footer from './Components/Footer/Footer';
 
-function App() {
+const App = () => {
+
+  const [status, setStatus] = useState(false);
+  const [useremail, setUserEmail] = useState();
+
+  const loginStatus = (status, useremail) => {
+    console.log("App.js " + status + " " + useremail);
+    // if(status == true){
+      setStatus(status);
+      setUserEmail(useremail);
+      // console.log(status + " " + useremail);
+    // }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Navbar loginStatus={status}/>
+      <Routes>
+        <Route path='/' element={<Dashboard />} />
+        <Route path='/newRequest' element={<NewRequest useremail={useremail} loginStatus={status} />} />
+        <Route path='/login' element={<Login loginStatus={loginStatus} />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  )
 }
+
 
 export default App;
